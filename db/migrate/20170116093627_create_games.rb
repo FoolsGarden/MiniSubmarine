@@ -5,6 +5,7 @@ class CreateGames < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :password_digest
+      t.integer :round_won, :default => 0
       t.timestamps
     end
 
@@ -12,7 +13,6 @@ class CreateGames < ActiveRecord::Migration
       t.belongs_to :player
       t.string :result
       t.integer :destroyed_submarine
-      t.integer :round_won
       t.timestamps
     end
 

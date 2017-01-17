@@ -13,7 +13,7 @@ function start_game(subOne, subTwo) {
       //¿que debería ir aquí para mandar al controlador el conteo de submarinos destruidos y el
       //conteo de oportunidades por ronda?∫
 
-      if (countForPlay == 2){
+      if (countForPlay == 3){
         $.post(url, { submarin: nowWinner, id: idPlayer }, function(data){
         
          console.log(nowWinner)

@@ -4,15 +4,16 @@
 	<table class="hovertable">
 		<!-- ¿Qué va en esta parte para mostrar la lista de ganadores? -->
     <tr>
-      <th>Games Won</th>
       <th>Player</th>
+      <th>Games Won</th>
     </tr>
-		<% @games.each do |game| %>
+		<% @players.each do |player| %>
 
-			<% if game.round_won != 0 %>
+			<% if player.round_won != 0 %>
 				  <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
 				  </tr>
-          <td><%= game.round_won %></td>
+          <td><%= player.name %></td>
+          <td><%= player.round_won %></td>
 			<% end %>
     <% end %>
 		

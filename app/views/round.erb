@@ -15,10 +15,10 @@
     </tr>
 
     <tr>
-    <% @user.games.each do |game| %>
-    <td><%= game.id %></td>
-    <td><%= game.destroyed_submarine %></td>
-    <td><%= game.result %></td>
+      <% @user.games.each do |game| %>
+      <td><%= game.id %></td>
+      <td><%= game.destroyed_submarine %></td>
+      <td><%= game.result %></td>
     </tr>
     <% end %>
 			

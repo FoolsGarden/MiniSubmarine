@@ -12,26 +12,29 @@ end
 
 post '/games' do
   
-  puts "*" * 100
+  
   # puts params
   puts destroyed_submarine = params[:submarin].to_i
 
-  puts @player = Player.find(params[:id])
-
-  
+  @player = Player.find(params[:id])
+  puts "*" * 100
+  num = @player.round_won
+  round = num
   
   if destroyed_submarine == 2
     result = "Winner"
-    round = 1
+    round += 1
+    puts "*" * 100
+    puts @player.update(round_won: round)
+
   elsif destroyed_submarine == 1
     result = "Almost"
-    round = 0
   else
     result = "Failed"
-    round = 0
   end
 
-  @player.games << Game.new(result: result, destroyed_submarine: destroyed_submarine, round_won: round)
+  @player.games << Game.new(result: result, destroyed_submarine: destroyed_submarine)
+
   #¿Qué va en esta parte para recibir la información del round actual, el score del jugador, el conteo de las
   #oportunidades de cada jugador, así como la sesión actual?
 
